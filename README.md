@@ -1,6 +1,6 @@
-КАСТОМНАЯ РЕАЛИЗАЦИЯ РЕАКТИВНОГО ПРОГРАММИРОВАНИЯ НА JAVA
+# КАСТОМНАЯ РЕАЛИЗАЦИЯ РЕАКТИВНОГО ПРОГРАММИРОВАНИЯ НА JAVA
 
-Этот проект представляет собой учебную реализацию основных концепций реактивного программирования, аналогичных RxJava. Он демонстрирует работу реактивных потоков данных с поддержкой многопоточности и операторов преобразования.
+## Этот проект представляет собой учебную реализацию основных концепций реактивного программирования, аналогичных RxJava. Он демонстрирует работу реактивных потоков данных с поддержкой многопоточности и операторов преобразования.
 
 Ключевые возможности
 
@@ -9,14 +9,14 @@
 - Многопоточность: Поддержка различных стратегий планирования.
 - Управление ресурсами: Механизмы отмены подписок.
 
-Технологии
+# Технологии
 
 - Java 17+
 - Maven (для сборки)
 - SLF4J + Log4j (для логирования)
 - JUnit 5 (для тестирования)
 
-Установка и запуск
+# Установка и запуск
 
 1. Клонируйте репозиторий:
 git clone https://github.com/t1sh3happy/Rxjavapt2.git
@@ -31,8 +31,8 @@ mvn clean test
 mvn exec:java -Dexec.mainClass="com.rxjavawork.Main"
 
 
-Структура проекта
-\```
+# Структура проекта
+```
 rxjavawork/
 ├── pom.xml
 ├── README.md
@@ -72,30 +72,37 @@ rxjavawork/
 │                   │   └── OperatorTest.java
 │                   └── schedulers/
 │                       └── SchedulerTest.java
+```
+
+# Основные компоненты
+
+\```
+src/main/java/com/rxjavawork/core/
+├── RxObservable.java       # Источник данных (аналог Observable)
+├── RxObserver.java         # Интерфейс наблюдателя
+├── RxOnSubscribe.java      # Функция эмиссии элементов
+├── RxDisposable.java       # Управление одной подпиской
+└── RxCompositeDisposable.java # Управление группой подписок
 \```
 
-Основные компоненты
-
-RxObservable
-
-Источник данных с фабричными методами:
+# Источник данных с фабричными методами:
 
 - create() - создание кастомного Observable.
 - just() - создание из одного или нескольких значений.
 
-Операторы
+# Операторы
 
 - Преобразование: MapOperator, FilterOperator.
 - Комбинирование: FlatMapOperator, MergeOperator, ConcatOperator.
 - Агрегация: ReduceOperator.
 
-Планировщики
+# Планировщики
 
 - RxIOScheduler - для I/O операций (cached thread pool).
 - RxComputationScheduler - для вычислений (fixed thread pool).
 - RxSingleScheduler - для последовательного выполнения (single thread).
 
-Примеры использования
+# Примеры использования
 
 Базовый пример
 RxObservable.just(1, 2, 3, 4, 5)
@@ -106,7 +113,7 @@ RxObservable.just(1, 2, 3, 4, 5)
     );
 
 
-Цепочка операторов
+# Цепочка операторов
 MapOperator.apply(
     FilterOperator.apply(
         RxObservable.just(10, 20, 30, 40),
@@ -116,7 +123,7 @@ MapOperator.apply(
 ).subscribe(System.out::println);
 
 
-Работа с планировщиками
+# Работа с планировщиками
 RxObservable.just("data")
     .subscribeOn(new RxIOScheduler())
     .observeOn(new RxSingleScheduler())
@@ -126,7 +133,7 @@ RxObservable.just("data")
     );
 
 
-Тестирование
+# Тестирование
 
 Проект включает в себя комплекс тестов:
 - Базовые сценарии работы Observable
