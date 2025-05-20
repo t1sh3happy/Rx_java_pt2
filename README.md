@@ -76,14 +76,14 @@ rxjavawork/
 
 # Основные компоненты
 
-\```
+```
 src/main/java/com/rxjavawork/core/
 ├── RxObservable.java       # Источник данных (аналог Observable)
 ├── RxObserver.java         # Интерфейс наблюдателя
 ├── RxOnSubscribe.java      # Функция эмиссии элементов
 ├── RxDisposable.java       # Управление одной подпиской
 └── RxCompositeDisposable.java # Управление группой подписок
-\```
+```
 
 # Источник данных с фабричными методами:
 
