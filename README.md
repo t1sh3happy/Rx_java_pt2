@@ -73,7 +73,6 @@ rxjavawork/
 │                       └── SchedulerTest.java
 
 
-
 Основные компоненты
 
 RxObservable
