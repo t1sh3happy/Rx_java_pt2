@@ -115,6 +115,7 @@ RxObservable.just(1, 2, 3, 4, 5)
 ```
 
 # Цепочка операторов
+```
 MapOperator.apply(
     FilterOperator.apply(
         RxObservable.just(10, 20, 30, 40),
@@ -122,9 +123,10 @@ MapOperator.apply(
     ),
     x -> x * 2
 ).subscribe(System.out::println);
-
+```
 
 # Работа с планировщиками
+```
 RxObservable.just("data")
     .subscribeOn(new RxIOScheduler())
     .observeOn(new RxSingleScheduler())
@@ -132,7 +134,7 @@ RxObservable.just("data")
         item -> System.out.println(Thread.currentThread().getName()),
         Throwable::printStackTrace
     );
-
+```
 
 # Тестирование
 
