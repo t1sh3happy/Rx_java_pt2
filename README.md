@@ -105,13 +105,14 @@ src/main/java/com/rxjavawork/core/
 # Примеры использования
 
 Базовый пример
+```
 RxObservable.just(1, 2, 3, 4, 5)
     .subscribe(
         i -> System.out.println("Получено: " + i),
         Throwable::printStackTrace,
         () -> System.out.println("Завершено")
     );
-
+```
 
 # Цепочка операторов
 MapOperator.apply(
