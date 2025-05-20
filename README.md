@@ -32,7 +32,7 @@ mvn exec:java -Dexec.mainClass="com.rxjavawork.Main"
 
 
 Структура проекта
-\\\
+\```
 rxjavawork/
 ├── pom.xml
 ├── README.md
@@ -72,7 +72,7 @@ rxjavawork/
 │                   │   └── OperatorTest.java
 │                   └── schedulers/
 │                       └── SchedulerTest.java
-\\\
+\```
 
 Основные компоненты
 
