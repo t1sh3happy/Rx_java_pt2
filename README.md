@@ -20,7 +20,7 @@
 
 1. Клонируйте репозиторий:
 git clone https://github.com/t1sh3happy/Rxjavapt2.git
-    cd RxJavaWork
+    cd Rxjavapt2
 
 
 2. Соберите проект и запустите тесты:
@@ -32,6 +32,7 @@ mvn exec:java -Dexec.mainClass="com.rxjavawork.Main"
 
 
 Структура проекта
+\\\ 
 rxjavawork/
 ├── pom.xml
 ├── README.md
@@ -71,7 +72,7 @@ rxjavawork/
 │                   │   └── OperatorTest.java
 │                   └── schedulers/
 │                       └── SchedulerTest.java
-
+\\\ 
 
 Основные компоненты
 
